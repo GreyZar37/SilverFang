@@ -77,13 +77,17 @@ public class Movement : MonoBehaviour
                     case platformType.EnemyPlatform:
 
                         currentPlatform.giveInfo();
-                        SceneManager.LoadScene(1);
+                        dizeNum= 0;
+
+                        SceneManager.LoadScene(2);
 
                         break;
 
                     case platformType.shopPlatform:
 
-                        print("Shop");
+                        currentPlatform.openShop();
+                        dizeNum = 0;
+
                         break;
                     default:
                         break;

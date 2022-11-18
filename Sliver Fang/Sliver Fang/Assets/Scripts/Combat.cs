@@ -9,6 +9,8 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 
 public class Combat : MonoBehaviour
 {
+    public PlayerEntity playerStats;
+
     public WorldManager WorldManager;
 
     public GameObject playerPrefab;
@@ -17,7 +19,7 @@ public class Combat : MonoBehaviour
     public Transform playerStation;
     public Transform enemyStation;
 
-    Unit playerUnit;
+    PlayerUnit playerUnit;
     Unit enemyUnit;
 
     public CombatHud playerHud;
@@ -48,18 +50,17 @@ public class Combat : MonoBehaviour
     IEnumerator  SetupBattle()
     {
         GameObject playerInst = Instantiate(playerPrefab, playerStation.position, Quaternion.identity);
-        playerUnit = playerInst.GetComponent<Unit>();
+        playerUnit = playerInst.GetComponent<PlayerUnit>();
         playerUnit.setStats();
 
         GameObject enemyInst = Instantiate(WorldManager.monsterToSpawn, enemyStation.position, Quaternion.Euler(0,180,0));
         enemyUnit = enemyInst.GetComponent<Unit>();
-        enemyUnit.stats = WorldManager.currentEnemy;
         enemyUnit.setStats();
 
         dialogueTxt.text = "You are fighting " + enemyUnit.unitName;
 
-        playerHud.setHud(playerUnit);
-        enemyHud.setHud(enemyUnit);
+        playerHud.setHudPlayer(playerUnit);
+        enemyHud.setHudUnit(enemyUnit);
 
         yield return new WaitForSeconds(2);
 
@@ -69,14 +70,16 @@ public class Combat : MonoBehaviour
 
     IEnumerator playerAttack()
     {
+        playerUnit.attack(true);
         int damage = (int)Random.Range(playerUnit.damage.x, playerUnit.damage.y + 1);
         bool isDead = enemyUnit.takeDamage(damage);
-        enemyHud.setHP(enemyUnit.currentHP);
+        enemyHud.setHudUnit(enemyUnit);
         dialogueTxt.text = "Hit: " + damage + " DMG";
         ShakeScreen.isShaking = true;
         state = BattleState.ENEMYTURN;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
+        playerUnit.attack(false);
 
         if (isDead)
         {
@@ -97,7 +100,7 @@ public class Combat : MonoBehaviour
 
         int damage = (int)Random.Range(enemyUnit.damage.x, enemyUnit.damage.y + 1);
         bool isDead = playerUnit.takeDamage(damage);
-        playerHud.setHP(playerUnit.currentHP);
+        playerHud.setHudPlayer(playerUnit);
         ShakeScreen.isShaking = true;
         dialogueTxt.text = "You got hit: " + damage + " DMG";
 
@@ -121,15 +124,24 @@ public class Combat : MonoBehaviour
         if(state == BattleState.WON)
         {
             dialogueTxt.text = "You won!";
+            playerStats.gold += enemyUnit.Gold;
+            playerStats.currentXP += enemyUnit.xpToGive;
+            playerStats.kills++;
+            playerStats.day++;
+
+
         }
         else if (state == BattleState.LOST)
         {
             dialogueTxt.text = "You lost!";
+            playerStats.currentXP += Mathf.RoundToInt( enemyUnit.xpToGive / 4);
+            playerStats.day++;
+
 
         }
 
-        SceneManager.LoadScene(0);
-        WorldManager.gameDone();
+       // SceneManager.LoadScene(1);
+      //  WorldManager.gameDone();
     }
     void playerTurn()
     {

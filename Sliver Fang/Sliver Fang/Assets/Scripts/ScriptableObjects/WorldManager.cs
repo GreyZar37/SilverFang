@@ -6,16 +6,15 @@ using UnityEngine;
 
 public class WorldManager : ScriptableObject
 {
-    public EntityStats currentEnemy;
-    public int MonsterID;
 
     public int currentLocation;
 
     public GameObject monsterToSpawn;
+
+    public List<string> enemiesDeafeted = new List<string>();
     
     public void gameDone()
     {
-        currentEnemy = null;
         monsterToSpawn = null;
 
 

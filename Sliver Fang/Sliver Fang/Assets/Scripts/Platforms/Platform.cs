@@ -6,11 +6,14 @@ public class Platform : MonoBehaviour
 {
     public platformType type;
     public WorldManager worldManager;
-    public EntityStats enemy;
     public GameObject MonsterToSpawn;
-    public int monsterID;
+    public string monsterID;
 
     [SerializeField] GameObject enemyVisual;
+
+    [SerializeField] GameObject ShopCanvasUI;
+    [SerializeField] GameObject StatsUI;
+
 
     public bool killed;
 
@@ -21,14 +24,30 @@ public class Platform : MonoBehaviour
     }
     void Start()
     {
-
-
-        if (killed)
+        if(type == platformType.EnemyPlatform)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            enemyVisual.SetActive(false);
-            this.enabled = false;
+            if (worldManager.enemiesDeafeted != null)
+            {
+                if (worldManager.enemiesDeafeted.Contains(monsterID))
+                {
+                    killed = true;
+                }
+            }
+
+
+            if (killed)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                enemyVisual.SetActive(false);
+                this.enabled = false;
+            }
         }
+        else if (type == platformType.shopPlatform)
+        {
+
+        }
+
+
     }
 
     // Update is called once per frame
@@ -40,8 +59,13 @@ public class Platform : MonoBehaviour
     public void giveInfo()
     {
         worldManager.monsterToSpawn = MonsterToSpawn;
-        worldManager.currentEnemy = enemy;
-        worldManager.MonsterID = monsterID;
+        worldManager.enemiesDeafeted.Add(monsterID);
 
+    }
+
+    public void openShop()
+    {
+        StatsUI.SetActive(false);
+        ShopCanvasUI.SetActive(true);
     }
 }

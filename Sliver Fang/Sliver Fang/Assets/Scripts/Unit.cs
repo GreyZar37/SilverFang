@@ -5,7 +5,6 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     public EntityStats stats;
-    public Weapon weapon;
 
     [HideInInspector] public string unitName;
     [HideInInspector] public int unitLevel;
@@ -13,6 +12,10 @@ public class Unit : MonoBehaviour
 
     [HideInInspector] public int maxHP;
     [HideInInspector] public int currentHP;
+
+    [HideInInspector] public int xpToGive;
+    [HideInInspector] public int Gold;
+
 
     private void Start()
     {
@@ -34,11 +37,15 @@ public class Unit : MonoBehaviour
 
     public void setStats()
     {
-        unitName = stats.EntityName;
+        unitName = stats.EnemyName;
         unitLevel = stats.level;
-        damage = weapon.weaponDamage;
+        damage = stats.damage;
         maxHP = stats.health;
         currentHP = maxHP;
+        Gold = stats.goldToGive;
+        xpToGive = stats.xpToGive;
+
+
     }
 
 }

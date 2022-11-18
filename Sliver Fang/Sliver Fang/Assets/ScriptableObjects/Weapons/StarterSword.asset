@@ -15,3 +15,5 @@ MonoBehaviour:
   weaponName: Wooden Sword
   price: 5
   weaponDamage: {x: 1, y: 3}
+  weaponSprite: {fileID: 21300000, guid: 46622d3ecd29bb742878cb64e48f3653, type: 3}
+  weaponID: 1.1.0

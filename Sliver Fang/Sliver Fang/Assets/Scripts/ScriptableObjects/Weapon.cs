@@ -9,4 +9,7 @@ public class Weapon : ScriptableObject
     public string weaponName;
     public int price;
     public Vector2 weaponDamage;
+    public Sprite weaponSprite;
+
+    public string weaponID;
 }

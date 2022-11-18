@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a74bfe75083d644a0dbbebea1bc1cc, type: 3}
   m_Name: The World Manager
   m_EditorClassIdentifier: 
-  currentEnemy: {fileID: 0}
-  MonsterID: 0
-  currentLocation: 7
-  monsterToSpawn: {fileID: 0}
+  currentLocation: 0
+  monsterToSpawn: {fileID: 5398216105007927551, guid: 393ef457e5866a34dacc7a70d7f47f74, type: 3}
+  enemiesDeafeted: []

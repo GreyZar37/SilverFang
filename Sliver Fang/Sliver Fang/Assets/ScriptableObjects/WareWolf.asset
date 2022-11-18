@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e8b57dfcbc2494f80119c6a2c5ebb7, type: 3}
   m_Name: WareWolf
   m_EditorClassIdentifier: 
-  EntityName: WareWolf
-  gold: 0
-  kills: 0
-  day: 0
+  enemyVisual: {fileID: 0}
+  EnemyName: WareWolf
+  goldToGive: 3
   defence: 0
   health: 20
   level: 3
+  xpToGive: 10
   damage: {x: 1, y: 5}
