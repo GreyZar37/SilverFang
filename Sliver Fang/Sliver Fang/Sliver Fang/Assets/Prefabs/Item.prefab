@@ -703,7 +703,7 @@ MonoBehaviour:
   stats: {fileID: 8886218094744271702}
   weaponName: {fileID: 8886218095227509088}
   buyBtn: {fileID: 8886218095267663688}
-  inventory: {fileID: 11400000, guid: 8da2722def81f8648bbc4f028bc32f6c, type: 2}
+  inventory: {fileID: 11400000, guid: 810234afc5fab694187d6b4fc7b073a0, type: 2}
   weapon: {fileID: 11400000, guid: 7c123113645c47641bb9d4815a12a67a, type: 2}
   playerStats: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
 --- !u!1 &8886218095227509090

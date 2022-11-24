@@ -88,7 +88,7 @@ public class Combat : MonoBehaviour
     {
         makeEnch();
         playerUnit.attack(true);
-        int damage = (int)Random.Range(playerUnit.damage.x * (playerStats.upgradeDMG + 1), playerUnit.damage.y * (playerStats.upgradeDMG + 1));
+        int damage = (int)Random.Range(playerUnit.damage.x, playerUnit.damage.y);
         bool isDead = enemyUnit.takeDamage(damage,currentEnchantment);
 
         enemyHud.setHudUnit(enemyUnit, enemyLevel);

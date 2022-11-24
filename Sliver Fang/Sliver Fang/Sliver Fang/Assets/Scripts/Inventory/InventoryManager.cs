@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
 
-    public PlayerInventory inventory;
+    public static List<string> iventoryID = new List<string>();
     [SerializeField] Transform itemTransform;
 
     [SerializeField] List<Weapon> weaponLibrary = new List<Weapon>();
@@ -33,12 +33,12 @@ public class InventoryManager : MonoBehaviour
     {
       
             InventoryUI.SetActive(true);
-            for (int i = 0; i < inventory.weaponId.Count; i++)
+            for (int i = 0; i < iventoryID.Count; i++)
             {
                 GameObject weapon = Instantiate(weaponItems, itemTransform);
                 weaponsInventory.Add(weapon);
 
-                switch (inventory.weaponId[i])
+                switch (iventoryID[i])
                 {
                     case "1.1.0":
                         weapon.GetComponent<InventoryItem>().weapon = weaponLibrary[0];

@@ -2185,6 +2185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126959339}
   - component: {fileID: 126959340}
+  - component: {fileID: 126959341}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -2259,6 +2260,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &126959341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126959338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832f982e9c8103d4c8b1d0a46e6044cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  worldManager: {fileID: 11400000, guid: 53c213e1e4b247e4e89deaf8fb0c28cc, type: 2}
+  stats: {fileID: 0}
+  MonsterToSpawn: {fileID: 0}
+  monsterID: 
+  enemyVisual: {fileID: 0}
+  ShopCanvasUI: {fileID: 1571951896}
+  StatsUI: {fileID: 416909663}
+  killed: 0
 --- !u!4 &129185524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2373557035136343415, guid: 614e59482d35e9b4f8082d947b9cf74f, type: 3}
@@ -29918,7 +29940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b42603624fb32043aa2561f01d825a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 8da2722def81f8648bbc4f028bc32f6c, type: 2}
+  inventory: {fileID: 11400000, guid: 810234afc5fab694187d6b4fc7b073a0, type: 2}
   itemTransform: {fileID: 1715474215}
   weaponLibrary:
   - {fileID: 11400000, guid: 90aa084780c8d3742b34ab1953443d51, type: 2}

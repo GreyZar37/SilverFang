@@ -16,7 +16,6 @@ public class InventoryItem : MonoBehaviour
 
 
     public Weapon weapon;
-    public PlayerInventory inventory;
     bool equipped;
 
     // Start is called before the first frame update
@@ -46,7 +45,7 @@ public class InventoryItem : MonoBehaviour
     void drop()
     {
       
-            inventory.weaponId.Remove(weapon.weaponID);
+            InventoryManager.iventoryID.Remove(weapon.weaponID);
             Destroy(gameObject);
        
     }

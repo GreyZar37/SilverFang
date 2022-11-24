@@ -22,7 +22,7 @@ MonoBehaviour:
   currentXP: 0
   XpRequired: 4
   BloodMaxValue: 100
-  currentBlood: 0
+  currentBlood: 100
   upgradePoints: 0
   upgradeHP: 0
   upgradeENG: 0

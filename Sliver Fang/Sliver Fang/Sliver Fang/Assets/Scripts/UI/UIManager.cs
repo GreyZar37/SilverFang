@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
         DMGTxt.text = "DMG: " + WeaponStats.weaponDamage.x.ToString() + " - " + WeaponStats.weaponDamage.y.ToString();
         DEFTxt.text = "DEF: " + playerStats.defence.ToString();
         HPTxt.text = "HP: " + playerStats.health.ToString();
+        goldTxt.text = "Gold: " + playerStats.gold.ToString();
 
         level();
     }
@@ -43,7 +44,6 @@ public class UIManager : MonoBehaviour
     public void setHud()
     {
  
-        goldTxt.text = "Gold: " + playerStats.gold.ToString();
         killsTxt.text = "Kills: " + playerStats.kills.ToString();
         DayTxt.text = "Day: " + playerStats.day.ToString();
    

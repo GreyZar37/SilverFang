@@ -10,7 +10,6 @@ public class itemScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI Price, stats, weaponName;
     [SerializeField] Button buyBtn;
 
-    public PlayerInventory inventory;
     public Weapon weapon;
     [SerializeField] PlayerEntity playerStats;
 
@@ -38,7 +37,7 @@ public class itemScript : MonoBehaviour
     {
         if(playerStats.gold >= weapon.price)
         {
-            inventory.weaponId.Add(weapon.weaponID);
+            InventoryManager.iventoryID.Add(weapon.weaponID);
             playerStats.gold -= weapon.price;
             Destroy(gameObject);
         }
