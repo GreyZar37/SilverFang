@@ -27,15 +27,26 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < 20; i++)
+        {
+            print(Random.Range(0, 3));
+        }
         WeaponStats = playerStats.weapon;
-       
-        engBar.maxValue = playerStats.BloodMaxValue;
+
+
+        int EngBarBloodMaxValue = Mathf.RoundToInt(playerStats.BloodMaxValue * (playerStats.upgradeENG + 1));
+        int HPValue = Mathf.RoundToInt(playerStats.health * (playerStats.upgradeHP + 1));
+        int DMGx = Mathf.RoundToInt(WeaponStats.weaponDamage.x * (playerStats.upgradeDMG + 1));
+        int DMGy = Mathf.RoundToInt(WeaponStats.weaponDamage.y * (playerStats.upgradeDMG + 1));
+
+
+        engBar.maxValue = EngBarBloodMaxValue;
         engBar.value = playerStats.currentBlood;
 
-        engText.text = playerStats.currentBlood.ToString() + "/" + playerStats.BloodMaxValue.ToString();
-        DMGTxt.text = "DMG: " + WeaponStats.weaponDamage.x.ToString() + " - " + WeaponStats.weaponDamage.y.ToString();
+        engText.text = playerStats.currentBlood.ToString() + "/" + EngBarBloodMaxValue.ToString();
+        DMGTxt.text = "DMG: " + DMGx.ToString() + " - " + DMGy.ToString();
         DEFTxt.text = "DEF: " + playerStats.defence.ToString();
-        HPTxt.text = "HP: " + playerStats.health.ToString();
+        HPTxt.text = "HP: " + HPValue.ToString();
         goldTxt.text = "Gold: " + playerStats.gold.ToString();
 
         level();

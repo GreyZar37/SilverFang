@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public EntityStats stats;
+    [HideInInspector] public EntityStats stats;
 
     [HideInInspector] public string unitName;
     [HideInInspector] public Vector2 unitLevel;
@@ -18,13 +18,12 @@ public class Unit : MonoBehaviour
 
     [HideInInspector] public int hitInfo;
 
-    public SpriteRenderer enemyVisual;
-    public Animator animator;
+    public Sprite enemyVisual;
+    [HideInInspector] public Animator animator;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        //enemyVisual.GetComponent<SpriteRenderer>().sprite = stats.enemyVisual;
 
     }
   
@@ -54,8 +53,8 @@ public class Unit : MonoBehaviour
                         hitInfo = damage * 2;
                         break;
                     case EnchantmentType.Garlic:
-                        currentHP -= (int)(damage * 1.25f);
-                        hitInfo = (int)(damage * 1.25f);
+                        currentHP -= Mathf.RoundToInt(damage * 1.5f);
+                        hitInfo = Mathf.RoundToInt(damage * 1.5f);
 
                         break;
                     case EnchantmentType.Blood:
@@ -63,13 +62,13 @@ public class Unit : MonoBehaviour
                         hitInfo = damage;
                         break;
                     case EnchantmentType.HolyWater:
-                        currentHP -= (int)(damage * 1.5f);
-                        hitInfo = (int)(damage * 1.5f);
+                        currentHP -= Mathf.RoundToInt(damage * 2f);
+                        hitInfo = Mathf.RoundToInt(damage * 2f);
 
                         break;
                     case EnchantmentType.noEffect:
                          currentHP -= damage;
-                        hitInfo = (int)(damage * 1.5f);
+                        hitInfo = damage;
 
                         break;
                     default:

@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Platform : MonoBehaviour
 {
     public platformType type;
     public WorldManager worldManager;
-    public EntityStats stats;
 
+
+
+    [Header("EnemyPlatform")]
+    public EntityStats stats;
     public GameObject MonsterToSpawn;
     public string monsterID;
-
     [SerializeField] GameObject enemyVisual;
+    public bool killed;
+
+
+    [Header("ShopPlatform")]
 
     [SerializeField] GameObject ShopCanvasUI;
     [SerializeField] GameObject StatsUI;
-
     Animator animator;
 
+    [Header("TreasurePlatform")]
+    public PlayerEntity playerMoney;
+    public int coins;
+    public GameObject coinsPrefab;
+    public ParticleSystem coinsRain;
 
-    public bool killed;
+    public SpriteRenderer chestCap;
+    public Sprite openCap;
+
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -47,10 +60,7 @@ public class Platform : MonoBehaviour
                 this.enabled = false;
             }
         }
-        else if (type == platformType.shopPlatform)
-        {
-
-        }
+       
 
 
     }
@@ -75,5 +85,13 @@ public class Platform : MonoBehaviour
 
         StatsUI.SetActive(false);
         ShopCanvasUI.SetActive(true);
+    }
+    public void openChest()
+    {
+        coinsRain.Play();
+        GameObject spawned = Instantiate(coinsPrefab, transform.position, Quaternion.identity);
+        spawned.GetComponent<TextMeshPro>().text = coins.ToString();
+        playerMoney.gold += coins;
+        chestCap.sprite = openCap;
     }
 }

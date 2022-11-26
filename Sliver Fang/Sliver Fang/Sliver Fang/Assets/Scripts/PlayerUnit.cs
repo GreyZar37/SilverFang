@@ -41,9 +41,9 @@ public class PlayerUnit : MonoBehaviour
         unitName = stats.PlayerName;
         unitLevel = stats.level;
         damage = stats.weapon.weaponDamage;
-        maxHP = stats.health;
+        maxHP = Mathf.RoundToInt(stats.health * (stats.upgradeHP + 1));
         currentHP = maxHP;
-        BloodMeter = stats.BloodMaxValue;
+        BloodMeter = Mathf.RoundToInt(stats.BloodMaxValue * (stats.upgradeENG + 1));
         currentBlood = stats.currentBlood;
     }
 

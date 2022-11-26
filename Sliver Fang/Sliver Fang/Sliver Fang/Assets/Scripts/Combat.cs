@@ -43,6 +43,8 @@ public class Combat : MonoBehaviour
 
     int enemyLevel;
 
+    [SerializeField] GameObject GameOverScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +72,7 @@ public class Combat : MonoBehaviour
         enemyUnit = enemyInst.GetComponent<Unit>();
         enemyUnit.stats = WorldManager.stats;
         enemyUnit.setStats();
-        enemyLevel = (int)Random.Range(enemyUnit.stats.level.x, enemyUnit.stats.level.y);
+        enemyLevel = (int)Random.Range(enemyUnit.stats.level.x, enemyUnit.stats.level.y + 1);
         enemyLevelBased(enemyLevel);
         playerHud.setHudPlayer(playerUnit);
         enemyHud.setHudUnit(enemyUnit, enemyLevel);
@@ -88,7 +90,7 @@ public class Combat : MonoBehaviour
     {
         makeEnch();
         playerUnit.attack(true);
-        int damage = (int)Random.Range(playerUnit.damage.x, playerUnit.damage.y);
+        int damage = Random.Range(Mathf.RoundToInt(playerUnit.damage.x * (playerStats.upgradeDMG +1)), Mathf.RoundToInt(playerUnit.damage.y * (playerStats.upgradeDMG + 1))+1);
         bool isDead = enemyUnit.takeDamage(damage,currentEnchantment);
 
         enemyHud.setHudUnit(enemyUnit, enemyLevel);
@@ -192,7 +194,8 @@ public class Combat : MonoBehaviour
 
         }
 
-     SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
+     GameOverScreen.SetActive(true);
      WorldManager.gameDone();
     }
     void playerTurn()
@@ -261,7 +264,7 @@ public class Combat : MonoBehaviour
 
         if (enemyUnit.currentHP < enemyUnit.maxHP / 2 && randomNum == 1 && playerUnit.currentHP >= enemyUnit.damage.y * 1.5f)
         {
-            int heal = (int)Random.Range((enemyUnit.damage.x + 1) * 2, enemyUnit.damage.y * 2);
+            int heal = (int)Random.Range((enemyUnit.damage.x + 1) * 2, (enemyUnit.damage.y+1) * 2);
             dialogueTxt.text = enemyUnit.unitName + " healed: " + heal + " HP";
             enemyUnit.currentHP += heal;
             enemyUnit.animator.SetBool("Healing", true);
@@ -269,7 +272,7 @@ public class Combat : MonoBehaviour
         }
         else if (enemyUnit.currentHP < enemyUnit.maxHP / 1.5f && randomNum >= 1)
         {
-            int lifesteal = (int)Random.Range(enemyUnit.damage.x, enemyUnit.damage.y * 0.70f);
+            int lifesteal = (int)Random.Range(enemyUnit.damage.x, (enemyUnit.damage.y +1) * 0.70f);
             playerIsDead = playerUnit.takeDamage(lifesteal);
 
             dialogueTxt.text = enemyUnit.unitName + " lifesteal: " + lifesteal + " HP";
@@ -279,7 +282,7 @@ public class Combat : MonoBehaviour
         }
         else
         {
-            int damage = (int)Random.Range(enemyUnit.damage.x, enemyUnit.damage.y);
+            int damage = (int)Random.Range(enemyUnit.damage.x, enemyUnit.damage.y + 1);
             playerIsDead = playerUnit.takeDamage(damage);
             dialogueTxt.text = "You got hit: " + damage + " DMG";
             enemyUnit.animator.SetBool("Attacking", true);

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyVisual: {fileID: 21300000, guid: 64df4488e21c39e438115712cb3f068c, type: 3}
   EnemyName: Noble Vampire
-  goldToGive: 1
+  goldToGive: 2
   defence: 0
   health: 10
-  xpToGive: 4
+  xpToGive: 6
   damage: {x: 1, y: 2}
   level: {x: 1, y: 3}
   enemyType: 0

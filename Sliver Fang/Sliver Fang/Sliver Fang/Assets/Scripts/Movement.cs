@@ -61,7 +61,6 @@ public class Movement : MonoBehaviour
             dizeAnim.enabled = false;
            
 
-            print(dizeNum);
             StartCoroutine(move());
             isMoving = true;
 
@@ -119,6 +118,13 @@ public class Movement : MonoBehaviour
                     case platformType.shopPlatform:
                         currentPlatform.openShop();
                         dizeNum = 0;
+
+                        break;
+                    case platformType.TreasurePlatform:
+                        if(dizeNum == 0)
+                        {
+                            currentPlatform.openChest();
+                        }
 
                         break;
                     default:

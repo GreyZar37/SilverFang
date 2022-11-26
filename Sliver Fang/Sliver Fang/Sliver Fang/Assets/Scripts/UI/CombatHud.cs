@@ -27,7 +27,7 @@ public class CombatHud : MonoBehaviour
         HealthText.text = unit.currentHP.ToString() + "/" + unit.maxHP.ToString();
         hpSlider.maxValue = unit.maxHP;
         hpSlider.value = unit.currentHP;
-        portrait.sprite = unit.stats.enemyVisual;
+        portrait.sprite = unit.enemyVisual;
 
     }
     public void setHudPlayer(PlayerUnit unit)

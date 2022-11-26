@@ -11,6 +11,9 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI DMG_Txt, HP_Txt, ENG_Txt, DEF_Txt, PT_TXT;
     [SerializeField] Button DMG_Btn, HP_Btn, ENG_Btn, DEF_Btn;
 
+
+
+
     [SerializeField] GameObject notify;
     private void Start()
     {
@@ -52,6 +55,7 @@ public class UpgradeSystem : MonoBehaviour
             {
                 case "HP":
                     player.upgradeHP += 0.10f;
+
                     break;
                 case "DMG":
                     player.upgradeDMG += 0.05f;
@@ -73,4 +77,5 @@ public class UpgradeSystem : MonoBehaviour
         }
        
     }
+
 }

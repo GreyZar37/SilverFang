@@ -297,8 +297,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Buy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
-  m_sharedMaterial: {fileID: 3698994036471788638, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
+  m_sharedMaterial: {fileID: -8560519961702713641, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -432,8 +432,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Gold: 10'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
-  m_sharedMaterial: {fileID: 3698994036471788638, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
+  m_sharedMaterial: {fileID: -8560519961702713641, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -703,7 +703,6 @@ MonoBehaviour:
   stats: {fileID: 8886218094744271702}
   weaponName: {fileID: 8886218095227509088}
   buyBtn: {fileID: 8886218095267663688}
-  inventory: {fileID: 11400000, guid: 810234afc5fab694187d6b4fc7b073a0, type: 2}
   weapon: {fileID: 11400000, guid: 7c123113645c47641bb9d4815a12a67a, type: 2}
   playerStats: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
 --- !u!1 &8886218095227509090

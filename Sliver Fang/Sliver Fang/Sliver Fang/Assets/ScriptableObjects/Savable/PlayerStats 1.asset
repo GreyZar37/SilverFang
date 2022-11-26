@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerStats 1
   m_EditorClassIdentifier: 
   PlayerName: Qianfan Shao
-  gold: 57
+  gold: 0
   kills: 1
   day: 1
   defence: 0
