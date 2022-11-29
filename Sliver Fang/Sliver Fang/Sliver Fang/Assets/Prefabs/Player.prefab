@@ -952,6 +952,9 @@ MonoBehaviour:
   currentBlood: 0
   swordSprite: {fileID: 3939461314184075137}
   anim: {fileID: 1876890871913108896}
+  hurt:
+  - {fileID: 8300000, guid: 24ab05350aaa2554d9e4b6991a8afcaf, type: 3}
+  - {fileID: 8300000, guid: 2b3abc416148a5f45b7c3dc5da082910, type: 3}
 --- !u!95 &1876890871913108896
 Animator:
   serializedVersion: 4

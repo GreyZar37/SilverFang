@@ -19,11 +19,12 @@ public class PlayerUnit : MonoBehaviour
     [SerializeField] SpriteRenderer swordSprite;
     [SerializeField] Animator anim;
 
-
+    [SerializeField] AudioClip[] hurt;
 
     public bool takeDamage(int damage)
     {
         currentHP -= damage;
+        AudioManager.playSound(hurt[Random.Range(0, hurt.Length)], 1f);
 
         if (currentHP <= 0)
         {

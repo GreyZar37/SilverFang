@@ -46,6 +46,14 @@ public class Movement : MonoBehaviour
             steps = speed * Time.deltaTime;
 
             playerPos.localPosition = Vector2.MoveTowards(playerPos.localPosition, tiles[currenPos].transform.position, steps);
+           
+
+
+
+
+
+            
+           
 
         }
     }
@@ -72,6 +80,8 @@ public class Movement : MonoBehaviour
     {
         while (dizeNum > 0)
         {
+           
+
             if (currenPos < tiles.Count - 1)
             {
                 currenPos++;
@@ -88,12 +98,23 @@ public class Movement : MonoBehaviour
 
 
             world.currentLocation = currenPos;
-            
+
+            float facingDir = playerPos.localPosition.x - tiles[currenPos].transform.position.x;
+
+            if (facingDir > 0)
+            {
+                playerPos.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else
+            {
+                playerPos.rotation = Quaternion.Euler(0, 0, 0);
+
+            }
 
 
 
             dizeNum--;
-
+          
 
             yield return new WaitForSeconds(Vector2.Distance(playerPos.localPosition, tiles[currenPos].transform.position)/3);
 

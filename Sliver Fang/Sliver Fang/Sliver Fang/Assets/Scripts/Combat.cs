@@ -44,11 +44,21 @@ public class Combat : MonoBehaviour
     int enemyLevel;
 
     [SerializeField] GameObject GameOverScreen;
+    [SerializeField] TextMeshProUGUI GoldText, XPText, LossOrWinText;
+    [SerializeField] Button bakcToGame;
+
+    [SerializeField] GameObject damagePrefab;
+    [SerializeField] GameObject deathParticlePrefab;
+
+
+    Animator screenFade;
 
     // Start is called before the first frame update
     void Start()
     {
+        screenFade = GameObject.FindGameObjectWithTag("Fader").GetComponent<Animator>();
         attackBtn.onClick.AddListener(() => onAttackButton());
+        bakcToGame.onClick.AddListener(() => StartCoroutine( returnToGame()));
         state = BattleState.START;
 
 
@@ -93,6 +103,10 @@ public class Combat : MonoBehaviour
         int damage = Random.Range(Mathf.RoundToInt(playerUnit.damage.x * (playerStats.upgradeDMG +1)), Mathf.RoundToInt(playerUnit.damage.y * (playerStats.upgradeDMG + 1))+1);
         bool isDead = enemyUnit.takeDamage(damage,currentEnchantment);
 
+        GameObject dmgText = Instantiate(damagePrefab, enemyUnit.transform.position, Quaternion.identity);
+        dmgText.GetComponent<TextMeshPro>().text = enemyUnit.hitInfo.ToString();
+        enemyUnit.animator.SetBool("Damaged", true);
+
         enemyHud.setHudUnit(enemyUnit, enemyLevel);
 
         if (currentEnchantment == EnchantmentType.noEffect && playerUnit.currentBlood < 100)
@@ -128,13 +142,21 @@ public class Combat : MonoBehaviour
 
         state = BattleState.ENEMYTURN;
 
+        if (isDead)
+        {
+            Instantiate(deathParticlePrefab, new Vector2(enemyUnit.transform.localPosition.x, 1), Quaternion.identity);
+            enemyUnit.transform.gameObject.SetActive(false);
+        }
+
         yield return new WaitForSeconds(1f);
+        enemyUnit.animator.SetBool("Damaged", false);
+
         playerUnit.attack(false);
 
         if (isDead)
         {
             state = BattleState.WON;
-            endBattle();
+            StartCoroutine(endBattle());
         }
         else
         {
@@ -154,17 +176,24 @@ public class Combat : MonoBehaviour
 
         enemyLogic();
         playerHud.setHudPlayer(playerUnit);
-        enemyHud.setHudUnit(enemyUnit, enemyLevel); 
+        enemyHud.setHudUnit(enemyUnit, enemyLevel);
+
+        if (playerIsDead)
+        {
+            Instantiate(deathParticlePrefab, new Vector2(playerUnit.transform.localPosition.x, 1), Quaternion.identity);
+            playerUnit.transform.gameObject.SetActive(false);
+        }
 
         yield return new WaitForSeconds(1);
         enemyUnit.animator.SetBool("Attacking", false);
         enemyUnit.animator.SetBool("Healing", false);
 
-
         if (playerIsDead)
         {
             state = BattleState.LOST;
-            endBattle();
+            
+
+           StartCoroutine(endBattle());
         }
         else
         {
@@ -173,30 +202,38 @@ public class Combat : MonoBehaviour
         }
     }
 
-    void endBattle()
+     IEnumerator endBattle()
     {
         if(state == BattleState.WON)
         {
-            dialogueTxt.text = "You won!";
+           
+
+            LossOrWinText.text = "You won!";
             playerStats.gold += enemyUnit.Gold;
             playerStats.currentXP += enemyUnit.xpToGive;
             playerStats.kills++;
             playerStats.day++;
-
+            GoldText.text = "Gold: " + enemyUnit.Gold.ToString();
+            XPText.text = "XP: " + enemyUnit.xpToGive.ToString();
 
         }
         else if (state == BattleState.LOST)
         {
-            dialogueTxt.text = "You lost!";
+
+
+            LossOrWinText.text = "You lost!";
             playerStats.currentXP += Mathf.RoundToInt( enemyUnit.xpToGive / 4);
             playerStats.day++;
+            GoldText.text = "Gold: " + "0";
+            XPText.text = "XP: " + Mathf.RoundToInt(enemyUnit.xpToGive / 4).ToString();
 
 
         }
+        dialogueTxt.text = "";
 
-        SceneManager.LoadScene(1);
+     yield  return new WaitForSeconds(1f);
      GameOverScreen.SetActive(true);
-     WorldManager.gameDone();
+   
     }
     void playerTurn()
     {
@@ -269,6 +306,9 @@ public class Combat : MonoBehaviour
             enemyUnit.currentHP += heal;
             enemyUnit.animator.SetBool("Healing", true);
 
+            GameObject healText = Instantiate(damagePrefab, enemyUnit.transform.position, Quaternion.identity);
+            healText.GetComponent<TextMeshPro>().text = heal.ToString();
+            healText.GetComponent<TextMeshPro>().color = Color.green;
         }
         else if (enemyUnit.currentHP < enemyUnit.maxHP / 1.5f && randomNum >= 1)
         {
@@ -278,7 +318,12 @@ public class Combat : MonoBehaviour
             dialogueTxt.text = enemyUnit.unitName + " lifesteal: " + lifesteal + " HP";
             enemyUnit.currentHP += lifesteal;
             enemyUnit.animator.SetBool("Attacking", true);
+            GameObject text = Instantiate(damagePrefab, playerUnit.transform.position, Quaternion.identity);
+            text.GetComponent<TextMeshPro>().text = lifesteal.ToString();
 
+            GameObject healText = Instantiate(damagePrefab, enemyUnit.transform.position, Quaternion.identity);
+            healText.GetComponent<TextMeshPro>().text = lifesteal.ToString();
+            healText.GetComponent<TextMeshPro>().color = Color.green;
         }
         else
         {
@@ -286,7 +331,8 @@ public class Combat : MonoBehaviour
             playerIsDead = playerUnit.takeDamage(damage);
             dialogueTxt.text = "You got hit: " + damage + " DMG";
             enemyUnit.animator.SetBool("Attacking", true);
-
+            GameObject text = Instantiate(damagePrefab, playerUnit.transform.position, Quaternion.identity);
+            text.GetComponent<TextMeshPro>().text = damage.ToString();
         }
 
         if (enemyUnit.currentHP > enemyUnit.maxHP)
@@ -308,5 +354,14 @@ public class Combat : MonoBehaviour
         enemyUnit.Gold += enemyUnit.Gold * level / 10;
         enemyUnit.xpToGive += enemyUnit.xpToGive * level / 10;
 
+    }
+
+    IEnumerator returnToGame()
+    {
+        screenFade.SetTrigger("Fade");
+
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(1);
+        WorldManager.gameDone();
     }
 }

@@ -17,7 +17,7 @@ MonoBehaviour:
   goldToGive: 3
   defence: 0
   health: 20
-  level: 3
   xpToGive: 10
   damage: {x: 1, y: 5}
+  level: {x: 1, y: 3}
   enemyType: 3

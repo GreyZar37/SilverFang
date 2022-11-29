@@ -6,7 +6,7 @@ using TMPro;
 public class TresureCoin : MonoBehaviour
 {
     public TextMeshPro coinValue;
-    int speedValue = 5;
+    public int speedValue = 5;
     Rigidbody2D rb2d;
 
     // Start is called before the first frame update
