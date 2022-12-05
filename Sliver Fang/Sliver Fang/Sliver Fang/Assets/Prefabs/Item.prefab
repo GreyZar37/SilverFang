@@ -534,8 +534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.096983, y: 392}
-  m_SizeDelta: {x: 388.43, y: 63.95}
+  m_AnchoredPosition: {x: -3.096983, y: 387.84125}
+  m_SizeDelta: {x: 388.43, y: 55.6325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886218094744271703
 CanvasRenderer:
@@ -567,8 +567,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1-4 Dmg
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
-  m_sharedMaterial: {fileID: 3698994036471788638, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
+  m_sharedMaterial: {fileID: -8560519961702713641, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -705,6 +705,8 @@ MonoBehaviour:
   buyBtn: {fileID: 8886218095267663688}
   weapon: {fileID: 11400000, guid: 7c123113645c47641bb9d4815a12a67a, type: 2}
   playerStats: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
+  buySound: {fileID: 8300000, guid: 81843353ad0308c46a9154ce0c049d57, type: 3}
+  errorBuy: {fileID: 8300000, guid: 79cef47b27954314d8f2450b87d03fe6, type: 3}
 --- !u!1 &8886218095227509090
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,8 +775,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The stone sword of the lords
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
-  m_sharedMaterial: {fileID: 3698994036471788638, guid: 2bf9139e880bcde4b98b0e087463fc09, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
+  m_sharedMaterial: {fileID: -8560519961702713641, guid: 080b707f3d731e744a7bdaa3f67a7a8c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

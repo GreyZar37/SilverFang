@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: PlayerStats 1
   m_EditorClassIdentifier: 
   PlayerName: Qianfan Shao
-  gold: 2
-  kills: 2
-  day: 2
+  gold: 0
+  kills: 0
+  day: 1
   defence: 0
   health: 15
-  level: 2
-  currentXP: 2
-  XpRequired: 5
+  level: 1
+  currentXP: 0
+  XpRequired: 4
   BloodMaxValue: 100
-  currentBlood: 60
-  upgradePoints: 1
+  currentBlood: 100
+  upgradePoints: 0
   upgradeHP: 0
   upgradeENG: 0
   upgradeDEF: 0

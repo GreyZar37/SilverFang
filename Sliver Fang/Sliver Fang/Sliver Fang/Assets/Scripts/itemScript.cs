@@ -13,6 +13,8 @@ public class itemScript : MonoBehaviour
     public Weapon weapon;
     [SerializeField] PlayerEntity playerStats;
 
+    [SerializeField] AudioClip buySound, errorBuy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +39,15 @@ public class itemScript : MonoBehaviour
     {
         if(playerStats.gold >= weapon.price)
         {
+            AudioManager.playSound(buySound, 1f);
             InventoryManager.iventoryID.Add(weapon.weaponID);
             playerStats.gold -= weapon.price;
             Destroy(gameObject);
+        }
+        else
+        {
+            AudioManager.playSound(errorBuy, 1f);
+
         }
 
     }

@@ -17,10 +17,10 @@ public class PlayerUnit : MonoBehaviour
     [HideInInspector] public int currentBlood;
 
     [SerializeField] SpriteRenderer swordSprite;
-    [SerializeField] Animator anim;
+    public Animator anim;
 
     [SerializeField] AudioClip[] hurt;
-
+    public AudioClip slash;
     public bool takeDamage(int damage)
     {
         currentHP -= damage;

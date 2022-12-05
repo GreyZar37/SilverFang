@@ -11,7 +11,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI DMG_Txt, HP_Txt, ENG_Txt, DEF_Txt, PT_TXT;
     [SerializeField] Button DMG_Btn, HP_Btn, ENG_Btn, DEF_Btn;
 
-
+    [SerializeField] AudioClip clickSound;
 
 
     [SerializeField] GameObject notify;
@@ -49,7 +49,9 @@ public class UpgradeSystem : MonoBehaviour
 
     void upgradeStat(string upgrade)
     {
-        if(player.upgradePoints > 0)
+        AudioManager.playSound(clickSound, 1f);
+
+        if (player.upgradePoints > 0)
         {
             switch (upgrade)
             {
@@ -76,6 +78,11 @@ public class UpgradeSystem : MonoBehaviour
             setHud();
         }
        
+    }
+
+    public void playSound()
+    {
+        AudioManager.playSound(clickSound, 1f);
     }
 
 }

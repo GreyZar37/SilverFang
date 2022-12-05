@@ -2000,6 +2000,7 @@ GameObject:
   - component: {fileID: 118913216}
   - component: {fileID: 118913215}
   - component: {fileID: 118913217}
+  - component: {fileID: 118913218}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2033,7 +2034,7 @@ Transform:
   - {fileID: 1327984399}
   - {fileID: 163377959}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &118913217
 Animator:
@@ -2055,6 +2056,115 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &118913218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118913213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b897ab9ab4afd1a4aae5b459ca702acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  world: {fileID: 11400000, guid: 53c213e1e4b247e4e89deaf8fb0c28cc, type: 2}
+  playerPos: {fileID: 118913216}
+  tiles:
+  - {fileID: 1513778481}
+  - {fileID: 557670917}
+  - {fileID: 383671749}
+  - {fileID: 126959339}
+  - {fileID: 1103583077}
+  - {fileID: 1813740019}
+  - {fileID: 955590002}
+  - {fileID: 2016772605}
+  - {fileID: 1716111813}
+  - {fileID: 1403924155}
+  - {fileID: 862639399}
+  - {fileID: 1426837185}
+  - {fileID: 2105934365}
+  - {fileID: 1471791408}
+  - {fileID: 1316294210}
+  - {fileID: 93693467}
+  - {fileID: 108366857}
+  - {fileID: 1561957345}
+  - {fileID: 1114353898}
+  - {fileID: 2144014543}
+  - {fileID: 1120142634}
+  - {fileID: 1364842115}
+  - {fileID: 1862947565}
+  - {fileID: 1749729025}
+  - {fileID: 812937048}
+  - {fileID: 1267645548}
+  - {fileID: 1257875411}
+  - {fileID: 1931835498}
+  - {fileID: 886696727}
+  - {fileID: 315782275}
+  - {fileID: 176585852}
+  - {fileID: 684584667}
+  - {fileID: 1353633903}
+  - {fileID: 98809341}
+  - {fileID: 1486835399}
+  - {fileID: 1122459535}
+  - {fileID: 1110631764}
+  - {fileID: 766382585}
+  - {fileID: 1383662448}
+  - {fileID: 1961793389}
+  - {fileID: 1416061597}
+  - {fileID: 3137785}
+  - {fileID: 1177293734}
+  - {fileID: 1679332923}
+  - {fileID: 195819248}
+  - {fileID: 1185943207}
+  - {fileID: 1445893908}
+  - {fileID: 1777391006}
+  - {fileID: 1982295610}
+  - {fileID: 455173630}
+  - {fileID: 295034527}
+  - {fileID: 685571349}
+  - {fileID: 487424404}
+  - {fileID: 1624333276}
+  - {fileID: 621791161}
+  - {fileID: 2121888702}
+  - {fileID: 1062756134}
+  - {fileID: 1304501074}
+  - {fileID: 606070349}
+  - {fileID: 163126057}
+  - {fileID: 836265595}
+  - {fileID: 1665228481}
+  - {fileID: 1001572149}
+  - {fileID: 1728834140}
+  - {fileID: 1660295086}
+  - {fileID: 1287822632}
+  - {fileID: 1153635531}
+  - {fileID: 771031458}
+  - {fileID: 940757276}
+  - {fileID: 2140074222}
+  - {fileID: 1898123147}
+  - {fileID: 1192906014}
+  - {fileID: 1693738483}
+  - {fileID: 276027922}
+  - {fileID: 6737202}
+  - {fileID: 176503049}
+  - {fileID: 1120323252}
+  - {fileID: 328229567}
+  speed: 3
+  dizeBtn: {fileID: 438273553}
+  dizeNumbers:
+  - {fileID: 960049660, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
+  - {fileID: -683143880, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
+  - {fileID: 1381649264, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
+  - {fileID: -777805376, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
+  - {fileID: -270358188, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
+  - {fileID: -152811973, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
+  dizeSprite: {fileID: 438273555}
+  dizeAnim: {fileID: 438273554}
+  playerAnim: {fileID: 118913217}
+  buttonClickSound: {fileID: 8300000, guid: 79cef47b27954314d8f2450b87d03fe6, type: 3}
+  footSteps:
+  - {fileID: 8300000, guid: 34379503722ee6c4f82d5a2f81d5d51f, type: 3}
+  - {fileID: 8300000, guid: f65efacc54827f14d9859b3a0af83930, type: 3}
 --- !u!1 &124067003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,7 +3521,7 @@ Transform:
   - {fileID: 1120323252}
   - {fileID: 328229567}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176503048
 GameObject:
@@ -4825,6 +4935,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1732609075}
+        m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6490,14 +6612,17 @@ MonoBehaviour:
   monsterID: 2.1.2
   enemyVisual: {fileID: 623469926}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &318254418
 GameObject:
   m_ObjectHideFlags: 0
@@ -7437,7 +7562,7 @@ Transform:
   m_Children:
   - {fileID: 1305762546}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &348134094
 GameObject:
@@ -9928,14 +10053,17 @@ MonoBehaviour:
   monsterID: 1.2.3
   enemyVisual: {fileID: 808976633}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &456970255
 GameObject:
   m_ObjectHideFlags: 0
@@ -11021,7 +11149,9 @@ Transform:
   m_LocalPosition: {x: -7.95, y: 1.7900001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1559317846}
+  - {fileID: 1100701677}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16209,14 +16339,17 @@ MonoBehaviour:
   monsterID: 1.2.1
   enemyVisual: {fileID: 897470503}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &813713032
 GameObject:
   m_ObjectHideFlags: 0
@@ -17101,14 +17234,17 @@ MonoBehaviour:
   monsterID: 2.1.1
   enemyVisual: {fileID: 2050522688}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &865516783
 GameObject:
   m_ObjectHideFlags: 0
@@ -26053,6 +26189,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1732609075}
+        m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1078714470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26229,6 +26377,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1100701676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1100701677}
+  m_Layer: 0
+  m_Name: XPLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1100701677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100701676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.151, y: 4.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1103583076
 GameObject:
   m_ObjectHideFlags: 0
@@ -26334,14 +26513,17 @@ MonoBehaviour:
   monsterID: 1.1.1
   enemyVisual: {fileID: 2035434028}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &1109213641
 GameObject:
   m_ObjectHideFlags: 0
@@ -26699,14 +26881,17 @@ MonoBehaviour:
   monsterID: 1.1.2
   enemyVisual: {fileID: 506117150}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &1120142633
 GameObject:
   m_ObjectHideFlags: 0
@@ -26887,7 +27072,7 @@ GameObject:
   - component: {fileID: 1122459536}
   - component: {fileID: 1122459537}
   m_Layer: 0
-  m_Name: Path Market
+  m_Name: Path Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26980,14 +27165,17 @@ MonoBehaviour:
   monsterID: 
   enemyVisual: {fileID: 0}
   killed: 0
+  dangerSound: {fileID: 0}
   ShopCanvasUI: {fileID: 1571951896}
   StatsUI: {fileID: 416909663}
+  doorSound: {fileID: 8300000, guid: cc048810db71f4d4793a2b83b5f41222, type: 3}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!4 &1123621288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2373557035136343415, guid: 614e59482d35e9b4f8082d947b9cf74f, type: 3}
@@ -29246,14 +29434,17 @@ MonoBehaviour:
   monsterID: 
   enemyVisual: {fileID: 0}
   killed: 0
+  dangerSound: {fileID: 0}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
   coins: 5
   coinsPrefab: {fileID: 8769170879422055415, guid: 27a2f1dc941209943891d440e99dc527, type: 3}
   coinsRain: {fileID: 1937872814}
   chestCap: {fileID: 1376963271}
   openCap: {fileID: 21300000, guid: a0eab4d86efa4604b87a29bfadc4ab6e, type: 3}
+  MoneySound: {fileID: 8300000, guid: 81843353ad0308c46a9154ce0c049d57, type: 3}
 --- !u!1 &1258957754
 GameObject:
   m_ObjectHideFlags: 0
@@ -30237,7 +30428,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302700601
 GameObject:
@@ -30768,14 +30959,17 @@ MonoBehaviour:
   monsterID: 
   enemyVisual: {fileID: 0}
   killed: 0
+  dangerSound: {fileID: 0}
   ShopCanvasUI: {fileID: 1571951896}
   StatsUI: {fileID: 416909663}
+  doorSound: {fileID: 8300000, guid: cc048810db71f4d4793a2b83b5f41222, type: 3}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &1323942374
 GameObject:
   m_ObjectHideFlags: 0
@@ -32138,14 +32332,17 @@ MonoBehaviour:
   monsterID: 1.1.3
   enemyVisual: {fileID: 2064324592}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!4 &1393590371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4695284021873806585, guid: ecec41217b8eb944b8ca850fa9a38c92, type: 3}
@@ -32671,14 +32868,17 @@ MonoBehaviour:
   monsterID: 
   enemyVisual: {fileID: 0}
   killed: 0
+  dangerSound: {fileID: 0}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
   coins: 2
   coinsPrefab: {fileID: 8769170879422055415, guid: 27a2f1dc941209943891d440e99dc527, type: 3}
   coinsRain: {fileID: 1051576261}
   chestCap: {fileID: 1802368518}
   openCap: {fileID: 21300000, guid: a0eab4d86efa4604b87a29bfadc4ab6e, type: 3}
+  MoneySound: {fileID: 8300000, guid: 81843353ad0308c46a9154ce0c049d57, type: 3}
 --- !u!114 &1407687993 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 735272736369150987, guid: 4b3d1eb5061a2314789b6bda4d21a4f3, type: 3}
@@ -37837,14 +38037,17 @@ MonoBehaviour:
   monsterID: 
   enemyVisual: {fileID: 0}
   killed: 0
+  dangerSound: {fileID: 0}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
   coins: 4
   coinsPrefab: {fileID: 8769170879422055415, guid: 27a2f1dc941209943891d440e99dc527, type: 3}
   coinsRain: {fileID: 1411210361}
   chestCap: {fileID: 1048243512}
   openCap: {fileID: 21300000, guid: a0eab4d86efa4604b87a29bfadc4ab6e, type: 3}
+  MoneySound: {fileID: 8300000, guid: 81843353ad0308c46a9154ce0c049d57, type: 3}
 --- !u!1 &1416390830
 GameObject:
   m_ObjectHideFlags: 0
@@ -37874,7 +38077,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416519508
 GameObject:
@@ -41340,6 +41543,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5848985394830141291, guid: 8c3acfab49bbaf44bbbe153d03f6c0c2, type: 3}
   m_PrefabInstance: {fileID: 725755463}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1559317845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559317846}
+  m_Layer: 0
+  m_Name: CoinLocation
+  m_TagString: CoinPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559317846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559317845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.5, y: 4.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561957344
 GameObject:
   m_ObjectHideFlags: 0
@@ -44259,14 +44493,17 @@ MonoBehaviour:
   monsterID: 1.2.2
   enemyVisual: {fileID: 288930871}
   killed: 0
+  dangerSound: {fileID: 8300000, guid: 6a39df8f0c4aed64ca586237df8bfc3a, type: 3}
   ShopCanvasUI: {fileID: 0}
   StatsUI: {fileID: 0}
+  doorSound: {fileID: 0}
   playerMoney: {fileID: 0}
   coins: 0
   coinsPrefab: {fileID: 0}
   coinsRain: {fileID: 0}
   chestCap: {fileID: 0}
   openCap: {fileID: 0}
+  MoneySound: {fileID: 0}
 --- !u!1 &1686963987
 GameObject:
   m_ObjectHideFlags: 0
@@ -45389,7 +45626,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1728834139
 GameObject:
@@ -45486,7 +45723,6 @@ GameObject:
   - component: {fileID: 1732609071}
   - component: {fileID: 1732609070}
   - component: {fileID: 1732609069}
-  - component: {fileID: 1732609068}
   - component: {fileID: 1732609072}
   - component: {fileID: 1732609073}
   - component: {fileID: 1732609074}
@@ -45498,111 +45734,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1732609068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732609067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b897ab9ab4afd1a4aae5b459ca702acf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  world: {fileID: 11400000, guid: 53c213e1e4b247e4e89deaf8fb0c28cc, type: 2}
-  playerPos: {fileID: 118913216}
-  tiles:
-  - {fileID: 1513778481}
-  - {fileID: 557670917}
-  - {fileID: 383671749}
-  - {fileID: 126959339}
-  - {fileID: 1103583077}
-  - {fileID: 1813740019}
-  - {fileID: 955590002}
-  - {fileID: 2016772605}
-  - {fileID: 1716111813}
-  - {fileID: 1403924155}
-  - {fileID: 862639399}
-  - {fileID: 1426837185}
-  - {fileID: 2105934365}
-  - {fileID: 1471791408}
-  - {fileID: 1316294210}
-  - {fileID: 93693467}
-  - {fileID: 108366857}
-  - {fileID: 1561957345}
-  - {fileID: 1114353898}
-  - {fileID: 2144014543}
-  - {fileID: 1120142634}
-  - {fileID: 1364842115}
-  - {fileID: 1862947565}
-  - {fileID: 1749729025}
-  - {fileID: 812937048}
-  - {fileID: 1267645548}
-  - {fileID: 1257875411}
-  - {fileID: 1931835498}
-  - {fileID: 886696727}
-  - {fileID: 315782275}
-  - {fileID: 176585852}
-  - {fileID: 684584667}
-  - {fileID: 1353633903}
-  - {fileID: 98809341}
-  - {fileID: 1486835399}
-  - {fileID: 1122459535}
-  - {fileID: 1110631764}
-  - {fileID: 766382585}
-  - {fileID: 1383662448}
-  - {fileID: 1961793389}
-  - {fileID: 1416061597}
-  - {fileID: 3137785}
-  - {fileID: 1177293734}
-  - {fileID: 1679332923}
-  - {fileID: 195819248}
-  - {fileID: 1185943207}
-  - {fileID: 1445893908}
-  - {fileID: 1777391006}
-  - {fileID: 1982295610}
-  - {fileID: 455173630}
-  - {fileID: 295034527}
-  - {fileID: 685571349}
-  - {fileID: 487424404}
-  - {fileID: 1624333276}
-  - {fileID: 621791161}
-  - {fileID: 2121888702}
-  - {fileID: 1062756134}
-  - {fileID: 1304501074}
-  - {fileID: 606070349}
-  - {fileID: 163126057}
-  - {fileID: 836265595}
-  - {fileID: 1665228481}
-  - {fileID: 1001572149}
-  - {fileID: 1728834140}
-  - {fileID: 1660295086}
-  - {fileID: 1287822632}
-  - {fileID: 1153635531}
-  - {fileID: 771031458}
-  - {fileID: 940757276}
-  - {fileID: 2140074222}
-  - {fileID: 1898123147}
-  - {fileID: 1192906014}
-  - {fileID: 1693738483}
-  - {fileID: 276027922}
-  - {fileID: 6737202}
-  - {fileID: 176503049}
-  - {fileID: 1120323252}
-  - {fileID: 328229567}
-  speed: 3
-  dizeBtn: {fileID: 438273553}
-  dizeNumbers:
-  - {fileID: 960049660, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
-  - {fileID: -683143880, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
-  - {fileID: 1381649264, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
-  - {fileID: -777805376, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
-  - {fileID: -270358188, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
-  - {fileID: -152811973, guid: e9363ea78917ccc4f8cf8877f25cc6c6, type: 3}
-  dizeSprite: {fileID: 438273555}
-  dizeAnim: {fileID: 438273554}
-  playerAnim: {fileID: 118913217}
 --- !u!114 &1732609069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45641,6 +45772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordSpriteRenderer: {fileID: 1327984400}
   playerEntity: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
+  coins: {fileID: 8769170879422055415, guid: 02705d4f04104c6489d8821a4a568fd9, type: 3}
+  player: {fileID: 118913216}
 --- !u!4 &1732609071
 Transform:
   m_ObjectHideFlags: 0
@@ -45680,6 +45813,7 @@ MonoBehaviour:
   item: {fileID: 8886218094918222021, guid: 4936ac0871a65d54498984de7782e528, type: 3}
   itemHolder: {fileID: 703419526}
   adUI: {fileID: 1022806614}
+  buttonClickSound: {fileID: 8300000, guid: 79cef47b27954314d8f2450b87d03fe6, type: 3}
 --- !u!114 &1732609073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45703,6 +45837,7 @@ MonoBehaviour:
   InventoryUI: {fileID: 393814863}
   inventoryButtonOpen: {fileID: 289466869}
   inventoryButtonClose: {fileID: 1876913745}
+  buttonClickSound: {fileID: 8300000, guid: 79cef47b27954314d8f2450b87d03fe6, type: 3}
 --- !u!114 &1732609074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45738,6 +45873,7 @@ MonoBehaviour:
   HP_Btn: {fileID: 1407687993}
   ENG_Btn: {fileID: 387926783}
   DEF_Btn: {fileID: 1170563963}
+  clickSound: {fileID: 8300000, guid: 79cef47b27954314d8f2450b87d03fe6, type: 3}
   notify: {fileID: 1930107448}
 --- !u!1 &1733056313
 GameObject:
@@ -46836,7 +46972,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1793693136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1732609075}
+        m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1796722759
 GameObject:
   m_ObjectHideFlags: 0
@@ -48419,7 +48567,7 @@ Transform:
   - {fileID: 1331357428}
   - {fileID: 792498835}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1861482529
 GameObject:
@@ -49068,7 +49216,7 @@ RectTransform:
   - {fileID: 870093762}
   - {fileID: 197242605}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -55409,6 +55557,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1732609075}
+        m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1948983237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55773,6 +55933,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1732609075}
+        m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -56569,7 +56741,7 @@ GameObject:
   - component: {fileID: 2016772605}
   - component: {fileID: 2016772606}
   m_Layer: 0
-  m_Name: EnemyCircle (10)
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

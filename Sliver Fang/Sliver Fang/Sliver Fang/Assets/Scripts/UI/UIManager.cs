@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] PlayerEntity playerStats;
      Weapon WeaponStats;
 
+
     // Start is called before the first frame update
     void Start()
     {

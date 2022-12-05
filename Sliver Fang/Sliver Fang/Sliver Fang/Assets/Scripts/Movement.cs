@@ -29,6 +29,10 @@ public class Movement : MonoBehaviour
     [SerializeField] Animator playerAnim;
     Animator fadeAnim;
 
+    [SerializeField] AudioClip buttonClickSound;
+    [SerializeField] AudioClip[] footSteps;
+
+
     void Start()
     {
         fadeAnim = GameObject.FindGameObjectWithTag("Fader").GetComponent<Animator>();
@@ -60,6 +64,7 @@ public class Movement : MonoBehaviour
 
     public void startMove()
     {
+        AudioManager.playSound(buttonClickSound, 1f);
         if (!isMoving)
         {
             playerAnim.SetBool("Walking", true);
@@ -159,6 +164,12 @@ public class Movement : MonoBehaviour
         dizeAnim.enabled = true;
         playerAnim.SetBool("Walking", false);
 
+    }
+
+    public void playFootStepSound()
+    {
+
+        AudioManager.playSound(footSteps[Random.Range(0, footSteps.Length)], 0.05f);
     }
 
 }

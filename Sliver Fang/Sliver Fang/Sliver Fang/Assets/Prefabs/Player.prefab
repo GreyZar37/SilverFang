@@ -955,6 +955,7 @@ MonoBehaviour:
   hurt:
   - {fileID: 8300000, guid: 24ab05350aaa2554d9e4b6991a8afcaf, type: 3}
   - {fileID: 8300000, guid: 2b3abc416148a5f45b7c3dc5da082910, type: 3}
+  slash: {fileID: 8300000, guid: e26eed97ff3fa064db3df19c00dad627, type: 3}
 --- !u!95 &1876890871913108896
 Animator:
   serializedVersion: 4

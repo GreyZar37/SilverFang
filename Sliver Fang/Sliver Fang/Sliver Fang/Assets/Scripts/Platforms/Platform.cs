@@ -8,13 +8,14 @@ public class Platform : MonoBehaviour
     public WorldManager worldManager;
 
 
-
     [Header("EnemyPlatform")]
     public EntityStats stats;
     public GameObject MonsterToSpawn;
     public string monsterID;
     [SerializeField] GameObject enemyVisual;
     public bool killed;
+    
+    [SerializeField] AudioClip dangerSound;
 
 
     [Header("ShopPlatform")]
@@ -22,6 +23,9 @@ public class Platform : MonoBehaviour
     [SerializeField] GameObject ShopCanvasUI;
     [SerializeField] GameObject StatsUI;
     Animator animator;
+
+    [SerializeField] AudioClip doorSound;
+
 
     [Header("TreasurePlatform")]
     public PlayerEntity playerMoney;
@@ -32,6 +36,7 @@ public class Platform : MonoBehaviour
     public SpriteRenderer chestCap;
     public Sprite openCap;
 
+    [SerializeField] AudioClip MoneySound;
 
 
     // Start is called before the first frame update
@@ -76,7 +81,7 @@ public class Platform : MonoBehaviour
         worldManager.monsterToSpawn = MonsterToSpawn;
         worldManager.stats = stats;
         worldManager.enemiesDeafeted.Add(monsterID);
-
+        AudioManager.playSound(dangerSound, 1f);
     }
 
     public void openShop()
@@ -85,9 +90,12 @@ public class Platform : MonoBehaviour
 
         StatsUI.SetActive(false);
         ShopCanvasUI.SetActive(true);
+        AudioManager.playSound(doorSound, 1f);
     }
     public void openChest()
     {
+        AudioManager.playSound(MoneySound, 1f);
+
         coinsRain.Play();
         GameObject spawned = Instantiate(coinsPrefab, transform.position, Quaternion.identity);
         spawned.GetComponent<TextMeshPro>().text = coins.ToString();

@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] Button inventoryButtonOpen;
     [SerializeField] Button inventoryButtonClose;
 
-
+    [SerializeField] AudioClip buttonClickSound;
     private void Update()
     {
     }
@@ -31,7 +31,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void OpenOrClose()
     {
-      
+        AudioManager.playSound(buttonClickSound, 1f);
             InventoryUI.SetActive(true);
             for (int i = 0; i < iventoryID.Count; i++)
             {
@@ -67,6 +67,8 @@ public class InventoryManager : MonoBehaviour
 
     public void close()
     {
+        AudioManager.playSound(buttonClickSound, 1f);
+
         InventoryUI.SetActive(false);
         for (int i = 0; i < weaponsInventory.Count; i++)
         {

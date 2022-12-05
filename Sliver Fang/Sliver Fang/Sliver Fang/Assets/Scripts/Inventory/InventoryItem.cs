@@ -13,7 +13,7 @@ public class InventoryItem : MonoBehaviour
     [SerializeField] Image SwordImage;
 
     [SerializeField] PlayerEntity player;
-
+    [SerializeField] AudioClip EquipSound, DropSound;
 
     public Weapon weapon;
     bool equipped;
@@ -40,13 +40,14 @@ public class InventoryItem : MonoBehaviour
     void equip()
     {
         player.weapon = weapon;
-        
+        AudioManager.playSound(EquipSound, 1f);
     }
     void drop()
     {
       
             InventoryManager.iventoryID.Remove(weapon.weaponID);
             Destroy(gameObject);
-       
+        AudioManager.playSound(DropSound, 1f);
+
     }
 }

@@ -24,6 +24,9 @@ public class ShopManager : MonoBehaviour
 
     [SerializeField] GameObject adUI;
 
+    [SerializeField] AudioClip buttonClickSound;
+
+
     bool firstTime = true;
 
     // Start is called before the first frame update
@@ -44,6 +47,7 @@ public class ShopManager : MonoBehaviour
 
     void refreshWeapons()
     {
+
         weaponsToSpawn.AddRange(Weapons);
 
         for (int i = 0; i < weaponsInShop.Count; i++)
@@ -61,6 +65,7 @@ public class ShopManager : MonoBehaviour
 
         if(firstTime == false)
         {
+            AudioManager.playSound(buttonClickSound, 1f);
             StartCoroutine(ad());
         }
         else

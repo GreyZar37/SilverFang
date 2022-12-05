@@ -148,6 +148,7 @@ public class Combat : MonoBehaviour
             enemyUnit.transform.gameObject.SetActive(false);
         }
 
+        AudioManager.playSound(playerUnit.slash, 1f);
         yield return new WaitForSeconds(1f);
         enemyUnit.animator.SetBool("Damaged", false);
 
@@ -169,9 +170,9 @@ public class Combat : MonoBehaviour
 
     IEnumerator enemyAttack()
     {
+
         dialogueTxt.text = enemyUnit.unitName + " is attacking";
         yield return new WaitForSeconds(1);
-
         ShakeScreen.isShaking = true;
 
         enemyLogic();
@@ -185,6 +186,7 @@ public class Combat : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+        playerUnit.anim.SetBool("Damaged", false);
         enemyUnit.animator.SetBool("Attacking", false);
         enemyUnit.animator.SetBool("Healing", false);
 
@@ -324,6 +326,8 @@ public class Combat : MonoBehaviour
             GameObject healText = Instantiate(damagePrefab, enemyUnit.transform.position, Quaternion.identity);
             healText.GetComponent<TextMeshPro>().text = lifesteal.ToString();
             healText.GetComponent<TextMeshPro>().color = Color.green;
+            playerUnit.anim.SetBool("Damaged", true);
+
         }
         else
         {
@@ -333,6 +337,8 @@ public class Combat : MonoBehaviour
             enemyUnit.animator.SetBool("Attacking", true);
             GameObject text = Instantiate(damagePrefab, playerUnit.transform.position, Quaternion.identity);
             text.GetComponent<TextMeshPro>().text = damage.ToString();
+            playerUnit.anim.SetBool("Damaged", true);
+
         }
 
         if (enemyUnit.currentHP > enemyUnit.maxHP)
@@ -363,5 +369,6 @@ public class Combat : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(1);
         WorldManager.gameDone();
+        GameManager.battleEnded = true;
     }
 }

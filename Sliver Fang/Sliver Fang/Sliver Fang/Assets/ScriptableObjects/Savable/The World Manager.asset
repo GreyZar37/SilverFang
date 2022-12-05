@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: The World Manager
   m_EditorClassIdentifier: 
   currentLocation: 0
-  monsterToSpawn: {fileID: 5398216105007927551, guid: 9a5bfa731a5fc9a43a312fb4667612bf, type: 3}
-  stats: {fileID: 11400000, guid: 98471018e0616e94c8a7d080e609f5c9, type: 2}
+  monsterToSpawn: {fileID: 5398216105007927551, guid: 9b52e657a8369784badf59d30cc995ce, type: 3}
+  stats: {fileID: 11400000, guid: 6967b4541af789c4abea7fbff09dd46e, type: 2}
   enemiesDeafeted: []
