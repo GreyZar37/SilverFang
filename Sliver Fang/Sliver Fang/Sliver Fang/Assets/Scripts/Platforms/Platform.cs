@@ -86,7 +86,6 @@ public class Platform : MonoBehaviour
 
     public void openShop()
     {
-        animator.SetTrigger("Fade");
 
         StatsUI.SetActive(false);
         ShopCanvasUI.SetActive(true);

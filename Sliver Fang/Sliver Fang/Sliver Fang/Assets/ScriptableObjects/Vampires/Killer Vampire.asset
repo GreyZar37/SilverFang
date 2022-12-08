@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4e8b57dfcbc2494f80119c6a2c5ebb7, type: 3}
-  m_Name: WereWolf
+  m_Name: Killer Vampire
   m_EditorClassIdentifier: 
-  enemyVisual: {fileID: 21300000, guid: 9d763c0c55079f241ab3bd06789d5fe2, type: 3}
-  EnemyName: Wolfie
+  enemyVisual: {fileID: 21300000, guid: 64df4488e21c39e438115712cb3f068c, type: 3}
+  EnemyName: Killer Vampire
   goldToGive: 3
-  defence: 7
-  health: 5
-  xpToGive: 8
+  defence: 3
+  health: 10
+  xpToGive: 9
   damage: {x: 1, y: 3}
-  level: {x: 1, y: 3}
+  level: {x: 1, y: 7}
   enemyType: 0

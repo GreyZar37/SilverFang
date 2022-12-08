@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WareWolf
   m_EditorClassIdentifier: 
   enemyVisual: {fileID: 0}
-  EnemyName: WareWolf
+  EnemyName: WereWolf
   goldToGive: 3
   defence: 0
   health: 20

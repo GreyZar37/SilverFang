@@ -16,15 +16,38 @@ public class PlayerUnit : MonoBehaviour
     [HideInInspector] public int BloodMeter;
     [HideInInspector] public int currentBlood;
 
+    [HideInInspector] public int currentArmor;
+    [HideInInspector] public int maxArmor;
+
+
     [SerializeField] SpriteRenderer swordSprite;
     public Animator anim;
 
     [SerializeField] AudioClip[] hurt;
+    [SerializeField] AudioClip core, armor;
+
+
     public AudioClip slash;
     public bool takeDamage(int damage)
     {
-        currentHP -= damage;
-        AudioManager.playSound(hurt[Random.Range(0, hurt.Length)], 1f);
+        if(currentArmor > 0)
+        {
+            currentArmor -= damage;
+            AudioManager.playSound(armor, .7f);
+
+        }
+        else
+        {
+            currentHP -= damage;
+            AudioManager.playSound(core, .7f);
+
+        }
+        if (currentArmor < 0)
+        {
+            currentArmor = 0;
+        }
+
+        AudioManager.playSound(hurt[Random.Range(0, hurt.Length)], .5f);
 
         if (currentHP <= 0)
         {
@@ -46,6 +69,8 @@ public class PlayerUnit : MonoBehaviour
         currentHP = maxHP;
         BloodMeter = Mathf.RoundToInt(stats.BloodMaxValue * (stats.upgradeENG + 1));
         currentBlood = stats.currentBlood;
+        maxArmor = Mathf.RoundToInt(stats.defence * (stats.upgradeDEF + 1));
+        currentArmor = maxArmor;
     }
 
     public void attack(bool attacking)

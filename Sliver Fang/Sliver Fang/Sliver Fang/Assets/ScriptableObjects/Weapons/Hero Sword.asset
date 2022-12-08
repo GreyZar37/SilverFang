@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d45f915ee9daa4e4b90666fa9f288ea5, type: 3}
-  m_Name: GlassSword
+  m_Name: Hero Sword
   m_EditorClassIdentifier: 
   weaponName: Hero Sword
-  price: 10
-  weaponDamage: {x: 0, y: 8}
+  price: 15
+  weaponDamage: {x: 5, y: 6}
   weaponSprite: {fileID: 21300000, guid: 36c0b249a3b8f714cab9d060690c9384, type: 3}
-  weaponID: 1.3.0
+  weaponID: 1.5.0

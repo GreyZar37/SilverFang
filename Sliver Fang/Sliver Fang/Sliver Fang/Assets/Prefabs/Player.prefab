@@ -950,11 +950,14 @@ MonoBehaviour:
   currentHP: 0
   BloodMeter: 0
   currentBlood: 0
+  currentArmor: 0
+  maxArmor: 0
   swordSprite: {fileID: 3939461314184075137}
   anim: {fileID: 1876890871913108896}
   hurt:
-  - {fileID: 8300000, guid: 24ab05350aaa2554d9e4b6991a8afcaf, type: 3}
-  - {fileID: 8300000, guid: 2b3abc416148a5f45b7c3dc5da082910, type: 3}
+  - {fileID: 8300000, guid: ed8b9882c2a6f2344b00ea4bef8a3437, type: 3}
+  core: {fileID: 8300000, guid: c8c7b70f5c7e36447858bc0923d23dff, type: 3}
+  armor: {fileID: 8300000, guid: 669d00614b547a245be2daf822177e1a, type: 3}
   slash: {fileID: 8300000, guid: e26eed97ff3fa064db3df19c00dad627, type: 3}
 --- !u!95 &1876890871913108896
 Animator:

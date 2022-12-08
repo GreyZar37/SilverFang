@@ -8,6 +8,7 @@ TagManager:
   - SFX
   - Music
   - CoinPos
+  - XPPos
   layers:
   - Default
   - TransparentFX

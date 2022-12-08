@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyVisual: {fileID: 21300000, guid: 64df4488e21c39e438115712cb3f068c, type: 3}
   EnemyName: Turned Vampire
-  goldToGive: 4
-  defence: 0
+  goldToGive: 5
+  defence: 5
   health: 14
   xpToGive: 12
   damage: {x: 2, y: 4}

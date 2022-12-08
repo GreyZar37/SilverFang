@@ -53,6 +53,8 @@ public class Combat : MonoBehaviour
 
     Animator screenFade;
 
+    [SerializeField] AudioClip lossGame, winGame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -208,32 +210,38 @@ public class Combat : MonoBehaviour
     {
         if(state == BattleState.WON)
         {
-           
 
+            AudioManager.playSound(winGame, 1f);
             LossOrWinText.text = "You won!";
-            playerStats.gold += enemyUnit.Gold;
-            playerStats.currentXP += enemyUnit.xpToGive;
+            //playerStats.gold += enemyUnit.Gold;
+           // playerStats.currentXP += enemyUnit.xpToGive;
             playerStats.kills++;
             playerStats.day++;
             GoldText.text = "Gold: " + enemyUnit.Gold.ToString();
             XPText.text = "XP: " + enemyUnit.xpToGive.ToString();
+            GameManager.coinsToSpawn = enemyUnit.Gold;
+
+            GameManager.xpToSpawn = enemyUnit.xpToGive; 
 
         }
         else if (state == BattleState.LOST)
         {
+            AudioManager.playSound(lossGame, 1f);
 
 
             LossOrWinText.text = "You lost!";
-            playerStats.currentXP += Mathf.RoundToInt( enemyUnit.xpToGive / 4);
+            // playerStats.currentXP += Mathf.RoundToInt( enemyUnit.xpToGive / 4);
             playerStats.day++;
             GoldText.text = "Gold: " + "0";
             XPText.text = "XP: " + Mathf.RoundToInt(enemyUnit.xpToGive / 4).ToString();
+            GameManager.coinsToSpawn = 0;
+            GameManager.xpToSpawn = Mathf.RoundToInt(enemyUnit.xpToGive / 4);
 
 
         }
         dialogueTxt.text = "";
 
-     yield  return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
      GameOverScreen.SetActive(true);
    
     }
@@ -359,6 +367,8 @@ public class Combat : MonoBehaviour
         enemyUnit.damage.y += enemyUnit.damage.y * level / 10;
         enemyUnit.Gold += enemyUnit.Gold * level / 10;
         enemyUnit.xpToGive += enemyUnit.xpToGive * level / 10;
+        enemyUnit.maxArmor += enemyUnit.maxArmor * level / 10;
+        enemyUnit.currentArmor += enemyUnit.currentArmor * level / 10;
 
     }
 

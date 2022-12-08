@@ -13,6 +13,9 @@ public class Unit : MonoBehaviour
     [HideInInspector] public int maxHP;
     [HideInInspector] public int currentHP;
 
+    [HideInInspector] public int maxArmor;
+    [HideInInspector] public int currentArmor;
+
     [HideInInspector] public int xpToGive;
     [HideInInspector] public int Gold;
 
@@ -20,6 +23,7 @@ public class Unit : MonoBehaviour
 
     public Sprite enemyVisual;
     [HideInInspector] public Animator animator;
+    [SerializeField] AudioClip core, armor;
 
     private void Start()
     {
@@ -37,24 +41,67 @@ public class Unit : MonoBehaviour
                 switch (enchahntment)
                 {
                     case EnchantmentType.BloodyWater:
-                         currentHP += damage * 2;
+                        currentHP += damage * 2;
                         hitInfo = damage * 2;
                         break;
                     case EnchantmentType.MysteriousStew:
-                        currentHP -= damage * 3;
-                        hitInfo = damage * 3;
+
+                        if(currentArmor > 0)
+                        {
+                            currentArmor -= damage * 2;
+                            hitInfo = damage * 2;
+
+                        }
+                        else
+                        {
+                            currentHP -= damage * 3;
+                            hitInfo = damage * 3;
+                        }
+
                         break;
                     case EnchantmentType.BloodyGarlic:
-                        currentHP -= damage / 2;
-                        hitInfo = damage / 2;
+
+                        if (currentArmor > 0)
+                        {
+                            currentArmor -= damage * 3;
+                            hitInfo = damage * 3;
+
+                        }
+                        else
+                        {
+                            currentHP -= damage / 2;
+                            hitInfo = damage / 2;
+                        }
+
                         break;
                     case EnchantmentType.GarlicStew:
-                        currentHP -= damage * 2;
-                        hitInfo = damage * 2;
+
+                        if (currentArmor > 0)
+                        {
+                            currentArmor -= damage /2;
+                            hitInfo = damage/2;
+
+                        }
+                        else
+                        {
+
+                            currentHP -= Mathf.RoundToInt(damage * 2.5f);
+                            hitInfo = Mathf.RoundToInt(damage * 2.5f);
+                        }
+
                         break;
                     case EnchantmentType.Garlic:
-                        currentHP -= Mathf.RoundToInt(damage * 1.5f);
-                        hitInfo = Mathf.RoundToInt(damage * 1.5f);
+                        if (currentArmor > 0)
+                        {
+                            currentArmor -= damage * 2;
+                            hitInfo = damage * 2;
+
+                        }
+                        else
+                        {
+                            currentHP -= Mathf.RoundToInt(damage * 1.5f);
+                            hitInfo = Mathf.RoundToInt(damage * 1.5f);
+                        }
 
                         break;
                     case EnchantmentType.Blood:
@@ -62,13 +109,35 @@ public class Unit : MonoBehaviour
                         hitInfo = damage;
                         break;
                     case EnchantmentType.HolyWater:
-                        currentHP -= Mathf.RoundToInt(damage * 2f);
-                        hitInfo = Mathf.RoundToInt(damage * 2f);
+
+                        if (currentArmor > 0)
+                        {
+                            currentArmor -= damage;
+                            hitInfo = damage;
+
+                        }
+                        else
+                        {
+                            currentHP -= Mathf.RoundToInt(damage * 2f);
+                            hitInfo = Mathf.RoundToInt(damage * 2f);
+                        }
+                       
 
                         break;
                     case EnchantmentType.noEffect:
-                         currentHP -= damage;
-                        hitInfo = damage;
+
+                        if (currentArmor > 0)
+                        {
+                            currentArmor -= damage;
+                            hitInfo = damage;
+
+                        }
+                        else
+                        {
+                            currentHP -= damage;
+                            hitInfo = damage;
+                        }
+
 
                         break;
                     default:
@@ -195,7 +264,18 @@ public class Unit : MonoBehaviour
         }
 
 
-        if(currentHP<= 0)
+        if (currentArmor <= 0)
+        {
+            AudioManager.playSound(core, .5f);
+
+            currentArmor = 0;
+        }
+        else
+        {
+            AudioManager.playSound(armor, .7f);
+        }
+
+        if (currentHP<= 0)
         {
             currentHP = 0;
             return true;
@@ -222,7 +302,8 @@ public class Unit : MonoBehaviour
         currentHP = maxHP;
         Gold =stats.goldToGive;
         xpToGive = stats.xpToGive;
-
+        maxArmor = stats.defence;
+        currentArmor = maxArmor;
 
     }
 

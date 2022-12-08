@@ -16,8 +16,8 @@ MonoBehaviour:
   gold: 0
   kills: 0
   day: 1
-  defence: 0
-  health: 15
+  defence: 5
+  health: 10
   level: 1
   currentXP: 0
   XpRequired: 4
@@ -28,4 +28,4 @@ MonoBehaviour:
   upgradeENG: 0
   upgradeDEF: 0
   upgradeDMG: 0
-  weapon: {fileID: 11400000, guid: 90aa084780c8d3742b34ab1953443d51, type: 2}
+  weapon: {fileID: 11400000, guid: b6b1f420c0d78be49869548be4a596ff, type: 2}

@@ -130,6 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bbee154414f0c347a9139d6de05cbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerEntity: {fileID: 11400000, guid: 8dc203832519d9d44a7f9afd0b6302bc, type: 2}
+  coinCollectSound: {fileID: 8300000, guid: 69b5346100820b546b7af721016e1bec, type: 3}
+  coinSpawnSound: {fileID: 8300000, guid: 6d2b207d72f3c1741a4cd1c6a9564fdd, type: 3}
+  Pos: CoinPos
+  timer_: 1.5
 --- !u!50 &-6084888342549073338
 Rigidbody2D:
   serializedVersion: 4
@@ -145,7 +150,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

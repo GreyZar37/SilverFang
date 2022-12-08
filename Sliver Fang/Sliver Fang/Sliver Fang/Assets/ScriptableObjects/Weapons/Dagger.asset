@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d45f915ee9daa4e4b90666fa9f288ea5, type: 3}
-  m_Name: StarterSword
+  m_Name: Dagger
   m_EditorClassIdentifier: 
-  weaponName: Wooden Sword
-  price: 2
-  weaponDamage: {x: 2, y: 3}
-  weaponSprite: {fileID: 21300000, guid: f73a07692df5570488e594ab6260a0f6, type: 3}
-  weaponID: 1.1.0
+  weaponName: Tiny Dagger
+  price: 10
+  weaponDamage: {x: 1, y: 8}
+  weaponSprite: {fileID: 21300000, guid: 3567097e0342f304ebff42594db0a2e2, type: 3}
+  weaponID: 1.4.0

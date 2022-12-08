@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d45f915ee9daa4e4b90666fa9f288ea5, type: 3}
-  m_Name: SteelSword
+  m_Name: Stick Sword
   m_EditorClassIdentifier: 
-  weaponName: Steel Sword
-  price: 35
-  weaponDamage: {x: 6, y: 12}
-  weaponSprite: {fileID: 21300000, guid: 20668f2b8b70e3a41b722ef64c293f45, type: 3}
-  weaponID: 1.6.0
+  weaponName: Mighty Stick
+  price: 1
+  weaponDamage: {x: 1, y: 3}
+  weaponSprite: {fileID: 21300000, guid: 17f8bc01bb8875149a0afb91e119c0c6, type: 3}
+  weaponID: 1.1.0

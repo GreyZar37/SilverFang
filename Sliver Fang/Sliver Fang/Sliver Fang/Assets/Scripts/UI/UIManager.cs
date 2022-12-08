@@ -39,14 +39,14 @@ public class UIManager : MonoBehaviour
         int HPValue = Mathf.RoundToInt(playerStats.health * (playerStats.upgradeHP + 1));
         int DMGx = Mathf.RoundToInt(WeaponStats.weaponDamage.x * (playerStats.upgradeDMG + 1));
         int DMGy = Mathf.RoundToInt(WeaponStats.weaponDamage.y * (playerStats.upgradeDMG + 1));
-
+        int defence = Mathf.RoundToInt(playerStats.defence * (playerStats.upgradeDEF + 1));
 
         engBar.maxValue = EngBarBloodMaxValue;
         engBar.value = playerStats.currentBlood;
 
         engText.text = playerStats.currentBlood.ToString() + "/" + EngBarBloodMaxValue.ToString();
         DMGTxt.text = "DMG: " + DMGx.ToString() + " - " + DMGy.ToString();
-        DEFTxt.text = "DEF: " + playerStats.defence.ToString();
+        DEFTxt.text = "DEF: " + defence.ToString();
         HPTxt.text = "HP: " + HPValue.ToString();
         goldTxt.text = "Gold: " + playerStats.gold.ToString();
 

@@ -778,11 +778,15 @@ MonoBehaviour:
   damage: {x: 0, y: 0}
   maxHP: 0
   currentHP: 0
+  maxArmor: 0
+  currentArmor: 0
   xpToGive: 0
   Gold: 0
   hitInfo: 0
   enemyVisual: {fileID: 21300000, guid: 9d763c0c55079f241ab3bd06789d5fe2, type: 3}
   animator: {fileID: 0}
+  core: {fileID: 8300000, guid: c8c7b70f5c7e36447858bc0923d23dff, type: 3}
+  armor: {fileID: 8300000, guid: 669d00614b547a245be2daf822177e1a, type: 3}
 --- !u!95 &1316609799918231404
 Animator:
   serializedVersion: 4
